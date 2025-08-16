@@ -1,0 +1,177 @@
+body {
+    background: linear-gradient(to right, #000428, #004e92);
+    font-family: sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Homepage specific background */
+body.home::before {
+    content: '';
+    position: fixed; /* Use fixed to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1; /* Place it behind the content */
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 250px;
+    height: auto;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.quote-container {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.carousel-container {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.carousel-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    /* For snapping effect */
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    width: 200px;
+    scroll-snap-align: start;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hide scrollbar for a cleaner look */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* General content styling for pages like About, Contact, etc. */
+.content-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 40px;
+    background-color: rgba(0, 7, 40, 0.5); /* Semi-transparent dark blue background */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 78, 146, 0.5);
+}
+
+.content-wrapper h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.content-wrapper p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* trailers.php specific styles */
+.trailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.trailer-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 78, 146, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container {
+    background-color: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.investment-snippet {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.investment-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #a9c1e8; /* A lighter blue for contrast */
+}
+
+.investment-details strong {
+    color: #ffffff;
+}
+
+.hot-deal {
+    font-size: 0.95em;
+    text-align: center;
+    line-height: 1.4;
+    color: #ffc107; /* A gold color for the "hot deal" text */
+    margin-top: auto; /* Pushes to the bottom */
+}
