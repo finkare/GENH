@@ -175,3 +175,97 @@ body.home::before {
     color: #ffc107; /* A gold color for the "hot deal" text */
     margin-top: auto; /* Pushes to the bottom */
 }
+
+/* --- Form Styling --- */
+.styled-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #a9c1e8;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0, 4, 40, 0.7);
+    border: 1px solid #004e92;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.form-group small {
+    font-size: 0.85em;
+    color: #a9c1e8;
+}
+
+.form-group-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.styled-form fieldset {
+    border: 1px solid #004e92;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.styled-form legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffc107;
+    color: #000428;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffd54f;
+}
+
+.form-errors, .form-success {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.form-errors {
+    background-color: rgba(255, 77, 77, 0.8);
+    border: 1px solid #cc0000;
+}
+
+.form-success {
+    background-color: rgba(76, 175, 80, 0.8);
+    border: 1px solid #388E3C;
+}
