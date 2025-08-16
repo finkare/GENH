@@ -326,3 +326,81 @@ body.home::before {
     border-color: #a9c1e8;
     color: #a9c1e8;
 }
+
+/* --- Investments Page Styles --- */
+.projects-list {
+    margin-top: 30px;
+}
+
+.project-item {
+    background-color: rgba(0, 4, 40, 0.7);
+    border: 1px solid #004e92;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-trailer video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #000;
+}
+
+.project-details {
+    padding: 25px;
+}
+
+.project-details h2 {
+    margin-top: 0;
+    color: #ffc107;
+    font-size: 1.8em;
+}
+
+.project-details p {
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.investment-terms {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    font-size: 1.1em;
+    line-height: 1.9;
+    border-top: 1px solid #004e92;
+    border-bottom: 1px solid #004e92;
+    padding: 20px 0;
+}
+
+.investment-terms li {
+    margin-bottom: 5px;
+}
+
+.investment-pitch {
+    font-style: italic;
+    text-align: center !important;
+    margin-top: 20px;
+}
+
+.project-details .hot-deal {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+}
+
+.invest-now-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.notice {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 4, 40, 0.7);
+    border: 1px solid #004e92;
+    border-radius: 10px;
+}
