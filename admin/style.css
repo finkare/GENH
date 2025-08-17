@@ -245,6 +245,11 @@ h1 {
     flex: 1;
 }
 
+.radio-group label {
+    margin-right: 20px;
+    font-weight: normal;
+}
+
 .flash-message {
     padding: 15px;
     margin-bottom: 20px;

@@ -25,12 +25,27 @@ if ($result) {
                 <?php foreach ($projects as $project): ?>
                     <div class="project-item">
                         <div class="project-trailer">
-                            <video controls poster="https://via.placeholder.com/560x315.png?text=<?php echo urlencode($project['title']); ?>+Trailer">
-                                <?php if (!empty($project['trailer_url'])): ?>
-                                    <!-- <source src="<?php echo htmlspecialchars($project['trailer_url']); ?>" type="video/mp4"> -->
+                            <?php if ($project['trailer_type'] === 'youtube'):
+                                $youtube_id = '';
+                                if (preg_match('/(v=|\/v\/|youtu\.be\/|embed\/|\/watch\?v=|\&v=)([^#\&\?]*).*/', $project['trailer_source'], $matches)) {
+                                    $youtube_id = $matches[2];
+                                }
+                                ?>
+                                <?php if ($youtube_id): ?>
+                                    <div class="video-container-yt">
+                                        <iframe src="https://www.youtube.com/embed/<?php echo htmlspecialchars($youtube_id); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                <?php else: ?>
+                                    <p>Invalid YouTube URL provided.</p>
                                 <?php endif; ?>
-                                Your browser does not support the video tag.
-                            </video>
+                            <?php else: // 'file' type ?>
+                                <video controls poster="<?php echo !empty($project['poster_image_path']) ? 'uploads/posters/' . htmlspecialchars($project['poster_image_path']) : 'https://via.placeholder.com/560x315.png?text=No+Poster'; ?>">
+                                    <?php if (!empty($project['trailer_source'])): ?>
+                                        <source src="<?php echo 'uploads/trailers/' . htmlspecialchars($project['trailer_source']); ?>" type="video/mp4">
+                                    <?php endif; ?>
+                                    Your browser does not support the video tag.
+                                </video>
+                            <?php endif; ?>
                         </div>
                         <div class="project-details">
                             <h2>🎥 Title: <?php echo htmlspecialchars($project['title']); ?></h2>
