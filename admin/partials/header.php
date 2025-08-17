@@ -24,7 +24,7 @@ if (!isset($_SESSION['admin_user_id'])) {
             <nav>
                 <a href="index.php">Dashboard</a>
                 <a href="manage_projects.php">Manage Projects</a>
-                <a href="#">Manage Users</a>
+                <a href="manage_users.php">Manage Users</a>
                 <a href="../index.php" target="_blank">View Site</a>
                 <a href="logout.php">Logout</a>
             </nav>
