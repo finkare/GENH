@@ -66,19 +66,55 @@ body.home::before {
     margin-bottom: 20px;
 }
 
+.carousel-container {
+    position: relative;
+    overflow: hidden; /* Hide the overflowing content */
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 75px;
+    z-index: 2;
+}
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, #001a4e, transparent);
+}
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, #001a4e, transparent);
+}
+
+
 .carousel {
     display: flex;
-    overflow-x: auto;
+    width: 200%; /* Because we duplicated the items */
     padding: 20px 0;
-    /* For snapping effect */
-    scroll-snap-type: x mandatory;
+    animation: scroll 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move to the start of the duplicated set */
+    }
 }
 
 .carousel-item {
     flex: 0 0 auto;
     margin-right: 20px;
-    width: 200px;
-    scroll-snap-align: start;
+    width: 200px; /* This is 1/10th of the total carousel width */
 }
 
 .carousel-item img {
@@ -471,4 +507,55 @@ body.home::before {
 
 .investments-table a:hover {
     text-decoration: underline;
+}
+
+/* --- Splash Screen Styles --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make it unclickable when hidden */
+}
+
+#splash-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the whole screen without distortion */
+}
+
+#skip-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10000;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#skip-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Class to hide main content initially on homepage */
+#main-content.hidden {
+    display: none;
 }

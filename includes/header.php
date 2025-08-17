@@ -9,6 +9,18 @@
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body class="<?php echo isset($page_class) ? $page_class : ''; ?>">
+
+<?php if (isset($page_class) && $page_class === 'home'): ?>
+<div id="splash-screen">
+    <video id="splash-video" autoplay muted playsinline>
+        <source src="uploads/videos/splash.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button id="skip-btn">Skip</button>
+</div>
+<?php endif; ?>
+
+<div id="main-content" class="<?php echo (isset($page_class) && $page_class === 'home') ? 'hidden' : ''; ?>">
     <header>
         <nav>
             <ul>
