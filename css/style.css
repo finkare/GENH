@@ -404,3 +404,53 @@ body.home::before {
     border: 1px solid #004e92;
     border-radius: 10px;
 }
+
+/* "My Investments" Dashboard Section */
+.my-investments {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #004e92;
+}
+
+.my-investments h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.investments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(0, 4, 40, 0.7);
+}
+
+.investments-table th, .investments-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #004e92;
+}
+
+.investments-table th {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffc107;
+    font-size: 1.1em;
+}
+
+.investments-table td {
+    font-size: 1.05em;
+}
+
+.investments-table tbody tr:hover {
+    background-color: rgba(0, 78, 146, 0.2);
+}
+
+.investments-table a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.investments-table a:hover {
+    text-decoration: underline;
+}

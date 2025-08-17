@@ -57,3 +57,18 @@ VALUES
   ('Project Alpha', 'Actor A, Actress B', '🎯 A perfect short-term, high-potential OTT investment!', '5% – 10% Returns Every Month', 3, 50000.00, 140.00, NULL, NULL),
   ('Project Beta', 'Actor C, Actor D', '🚀 Seats are filling fast – Secure your ticket today!', '6% – 9% Returns Every Month', 4, 75000.00, 160.00, NULL, NULL),
   ('Project Gamma', 'Actress E, Actor F', '🎯 A perfect short-term, high-potential OTT investment!', '7% – 11% Returns Every Month', 5, 100000.00, 180.00, NULL, NULL);
+
+--
+-- Table structure for table `user_investments`
+--
+
+CREATE TABLE `user_investments` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT UNSIGNED NOT NULL,
+  `project_id` INT UNSIGNED NOT NULL,
+  `investment_amount` DECIMAL(12, 2) NOT NULL,
+  `status` ENUM('active', 'completed', 'withdrawn') NOT NULL DEFAULT 'active',
+  `investment_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`project_id`) REFERENCES `projects`(`id`) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
