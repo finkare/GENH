@@ -20,6 +20,7 @@ CREATE TABLE `users` (
   `otp_expires_at` DATETIME DEFAULT NULL,
   `is_verified` BOOLEAN NOT NULL DEFAULT FALSE, -- Tracks if the user has verified their email via OTP
   `is_active` BOOLEAN NOT NULL DEFAULT FALSE, -- To be enabled by an admin for Indian investors before they can invest
+  `is_admin` BOOLEAN NOT NULL DEFAULT FALSE, -- 0 = regular user, 1 = admin
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
